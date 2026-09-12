@@ -1,0 +1,61 @@
+# dranix agent configuration
+# Load order: ~/.config/dranix/agents.toml then ./agents.toml (project wins)
+
+visibility = "all"
+on_quit = "ask"
+io = "stdio"
+
+# Soft-disable an agent with enabled = false (no confirm).
+# Removing an agent from this file permanently needs an interactive confirm in the TUI.
+
+[defaults]
+focus = "mock"
+max_timeline = 200
+max_chars = 4000
+
+[[agents]]
+id = "mock"
+name = "Mock Echo"
+adapter = "mock"
+enabled = true
+command = "mock"
+
+[[agents]]
+id = "codex"
+name = "Codex"
+adapter = "codex"
+enabled = false
+command = "codex"
+args = ["exec", "--"]
+
+[[agents]]
+id = "claude"
+name = "Claude Code"
+adapter = "claude-code"
+enabled = false
+command = "claude"
+args = ["-p", "--"]
+
+[[agents]]
+id = "pi"
+name = "Pi"
+adapter = "pi"
+enabled = false
+command = "pi"
+args = ["--"]
+
+[[agents]]
+id = "oh-my-pi"
+name = "Oh My Pi"
+adapter = "oh-my-pi"
+enabled = false
+command = "oh-my-pi"
+args = ["--"]
+
+[[agents]]
+id = "kimi"
+name = "Kimi Code"
+adapter = "kimi-code"
+enabled = false
+command = "kimi"
+args = ["--"]
