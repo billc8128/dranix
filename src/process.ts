@@ -31,8 +31,10 @@ export function buildSpec(agent: AgentConfig, prompt: string): SpawnSpec {
  * - other adapters: spawn command template; on missing binary, return stubbed error
  */
 export async function runAgent(
-  agent: AgentConfig, prompt: string, opts: RunOptions = {}):
-  Promise<RunResult> {
+  agent: AgentConfig,
+  prompt: string,
+  opts: RunOptions = {},
+): Promise<RunResult> {
   if (!agent.enabled) {
     return {
       ok: false,
